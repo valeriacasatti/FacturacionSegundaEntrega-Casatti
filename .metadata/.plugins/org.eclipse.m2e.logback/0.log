@@ -67,3 +67,30 @@
 2025-01-09 16:16:23,721 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2025-01-09 16:16:23,735 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-01-09 16:16:23,741 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\syste\OneDrive\Desktop\FacturacionSegundaEntrega-Casatti\FacturacionSegundaEntrega-Casatti\src\test\resources
+2025-01-09 16:18:22,195 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-09 16:18:22,213 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-09 16:18:22,221 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\syste\OneDrive\Desktop\FacturacionSegundaEntrega-Casatti\FacturacionSegundaEntrega-Casatti\src\test\resources
+2025-01-09 16:18:31,762 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-09 16:18:31,777 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-09 16:18:31,784 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\syste\OneDrive\Desktop\FacturacionSegundaEntrega-Casatti\FacturacionSegundaEntrega-Casatti\src\test\resources
+2025-01-09 16:19:00,208 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-09 16:19:00,220 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-09 16:19:00,228 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\syste\OneDrive\Desktop\FacturacionSegundaEntrega-Casatti\FacturacionSegundaEntrega-Casatti\src\test\resources
+2025-01-09 16:19:31,285 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-09 16:19:31,301 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-09 16:19:31,310 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\syste\OneDrive\Desktop\FacturacionSegundaEntrega-Casatti\FacturacionSegundaEntrega-Casatti\src\test\resources
+2025-01-09 16:19:58,626 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-09 16:19:58,646 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-09 16:19:58,656 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\syste\OneDrive\Desktop\FacturacionSegundaEntrega-Casatti\FacturacionSegundaEntrega-Casatti\src\test\resources
+2025-01-09 16:20:28,385 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-09 16:20:28,399 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-09 16:20:28,407 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\syste\OneDrive\Desktop\FacturacionSegundaEntrega-Casatti\FacturacionSegundaEntrega-Casatti\src\test\resources
+2025-01-09 16:20:38,754 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-09 16:20:38,767 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-09 16:20:38,774 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\syste\OneDrive\Desktop\FacturacionSegundaEntrega-Casatti\FacturacionSegundaEntrega-Casatti\src\test\resources
+2025-01-09 16:20:51,094 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-09 16:20:51,109 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-09 16:20:51,115 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\syste\OneDrive\Desktop\FacturacionSegundaEntrega-Casatti\FacturacionSegundaEntrega-Casatti\src\test\resources
+2025-01-09 16:21:04,904 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-09 16:21:04,922 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-09 16:21:04,930 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\syste\OneDrive\Desktop\FacturacionSegundaEntrega-Casatti\FacturacionSegundaEntrega-Casatti\src\test\resources
