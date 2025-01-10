@@ -4,6 +4,8 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -39,17 +41,18 @@ public class Venta {
 	private Date fecha;
 	
 	@Column(nullable = false)
-	private int total;
+	private Integer total;
 	
 	@ManyToOne
 	@JoinColumn(name = "cliente_id", nullable = false)
 	private Cliente cliente;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(
 			name = "venta_producto",
 			joinColumns = @JoinColumn(name = "venta_id"),
 			inverseJoinColumns = @JoinColumn(name = "producto_id")
 			)
+	@JsonIgnore
 	private List<Producto> productos = new ArrayList<>();
 }

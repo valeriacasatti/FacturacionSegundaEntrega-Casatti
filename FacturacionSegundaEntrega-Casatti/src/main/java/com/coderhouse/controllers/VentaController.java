@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.coderhouse.dtos.VentaDTO;
 import com.coderhouse.models.Venta;
 import com.coderhouse.services.VentaService;
 
@@ -27,9 +28,9 @@ public class VentaController {
 	
 	//GET ALL VENTAS
 	@GetMapping
-	public ResponseEntity<List<Venta>> getAllVentas() {
+	public ResponseEntity<List<VentaDTO>> getAllVentas() {
 		try {
-			List<Venta> ventas = ventaService.getAllVentas();
+			List<VentaDTO> ventas = ventaService.getAllVentas();
 			return ResponseEntity.ok(ventas); 
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); 
@@ -38,9 +39,9 @@ public class VentaController {
 	
 	//GET VENTA BY ID
 	@GetMapping("/{id}")
-	public ResponseEntity<Venta> getProductoById(@PathVariable Long id) {
+	public ResponseEntity<VentaDTO> getProductoById(@PathVariable Long id) {
 		try {
-			Venta venta = ventaService.getVentaById(id);
+			VentaDTO venta = ventaService.getVentaById(id);
 			return ResponseEntity.ok(venta);
 		}catch(IllegalArgumentException e) {
 			return ResponseEntity.notFound().build();
@@ -51,9 +52,9 @@ public class VentaController {
 	
 	//CREAR VENTA
 	@PostMapping
-	public ResponseEntity<Venta> newVenta(@RequestBody Venta venta){
+	public ResponseEntity<VentaDTO> newVenta(@RequestBody VentaDTO dto){
 		try {
-			Venta nuevaVenta = ventaService.newVenta(venta);
+			VentaDTO nuevaVenta = ventaService.newVenta(dto.getClienteId(), dto.getProductosId());
 			return ResponseEntity.status(HttpStatus.CREATED).body(nuevaVenta);
 		}catch(Exception e) {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); 
@@ -62,10 +63,10 @@ public class VentaController {
 	
 	//ACTUALIZAR VENTA
 	@PutMapping("/{id}")
-	public ResponseEntity<Venta> updateVentaById(@PathVariable Long id, @RequestBody Venta ventaInfo){
+	public ResponseEntity<Venta> updateVentaById(@PathVariable Long id, @RequestBody VentaDTO dto){
 		try {
-			Venta updateVenta = ventaService.updateVentaById(id, ventaInfo);
-			return ResponseEntity.ok(updateVenta);
+			Venta updatedVenta = ventaService.updateVentaById(id, dto);
+			return ResponseEntity.ok(updatedVenta);
 		}catch(IllegalArgumentException e) {
 			return ResponseEntity.notFound().build(); 
 		}catch(Exception e) {
