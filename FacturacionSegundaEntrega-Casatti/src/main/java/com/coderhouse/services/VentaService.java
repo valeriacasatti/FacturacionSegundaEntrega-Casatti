@@ -71,9 +71,18 @@ public class VentaService {
 	    List<Producto> productos = new ArrayList<>();
 	    
 	    for(Long productoId : productosId) {
-	    	Producto productoEncontrado = productoRepository.findById(productoId)
+	    	Producto producto = productoRepository.findById(productoId)
 	    			.orElseThrow(() -> new IllegalArgumentException("Producto no encontrado"));
-	    	productos.add(productoEncontrado);
+	    	
+	    	//Stock
+	    	if(producto.getStock() <= 0) {
+	    		throw new IllegalArgumentException("Stock insuficiente");
+	    	}
+	    	
+	    	producto.setStock(producto.getStock() - 1);
+	    	productoRepository.save(producto);
+	    	
+	    	productos.add(producto);
 	    }
 	    
 	    // Calcular el total de la venta
@@ -117,18 +126,38 @@ public class VentaService {
 	    
 	 // Actualizar productos
 	    if (dto.getProductosId() != null && !dto.getProductosId().isEmpty()) {
-	        List<Producto> productos = productoRepository.findAllById(dto.getProductosId());
-	        if (productos.size() != dto.getProductosId().size()) {
-	            throw new IllegalArgumentException("Uno o más productos no encontrados");
+	    	
+	    	// Restaurar el stock de los productos actuales
+	        for (Producto producto : venta.getProductos()) {
+	            producto.setStock(producto.getStock() + 1);
+	            productoRepository.save(producto);
 	        }
-	        venta.setProductos(productos);
+	        
+	        List<Producto> nuevosProductos = dto.getProductosId().stream()
+	        		.map(productoId -> {
+	        			Producto producto = productoRepository.findById(productoId)
+	    	        			.orElseThrow(() -> new IllegalArgumentException("Producto no encontrado"));
+	        			
+	        			if(producto.getStock() <= 0) {
+	    	                throw new IllegalArgumentException("Stock insuficiente");
+	    	        	}
+	        			
+	        			producto.setStock(producto.getStock() - 1);
+	    	        	productoRepository.save(producto);
+	    	        	
+	    	        	return producto;
+	        		})
+	        		.toList();
+	        
+        	venta.setProductos(nuevosProductos);
 	        
 	        // Recalcular el total
-	        int nuevoTotal = productos.stream()
+	        int nuevoTotal = nuevosProductos.stream()
 	                .mapToInt(Producto::getPrecio)
 	                .sum();
 	        venta.setTotal(nuevoTotal);
 	    }
+	    
 		return ventaRepository.save(venta);
 	}
 	

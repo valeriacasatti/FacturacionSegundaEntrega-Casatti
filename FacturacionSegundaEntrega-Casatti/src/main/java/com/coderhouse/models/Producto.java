@@ -11,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,6 +37,10 @@ public class Producto {
 	
 	@Column(nullable=false)
 	private int precio;
+	
+	@Column(nullable=false)
+	@PositiveOrZero(message = "El stock no puede ser negativo")
+	private int stock;
 	
 	@ManyToMany(mappedBy = "productos", fetch = FetchType.EAGER)
 	private List<Venta> ventas = new ArrayList<>();

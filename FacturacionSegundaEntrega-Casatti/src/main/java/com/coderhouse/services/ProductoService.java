@@ -30,6 +30,9 @@ public class ProductoService {
 	//CREAR PRODUCTO
 	@Transactional
 	public Producto newProducto(Producto productoInfo) {
+		if(productoInfo.getStock()<=0) {
+	        throw new IllegalArgumentException("El stock no puede ser negativo");
+		}
 		return productoRepository.save(productoInfo);
 	}
 	
@@ -38,12 +41,17 @@ public class ProductoService {
 	public Producto updateProductoById(Long id, Producto productoInfo) {
 		Producto producto = productoRepository.findById(id)
 				.orElseThrow(()-> new IllegalArgumentException("Cliente no encontrado"));
+		
 		if(productoInfo.getNombre() != null && !productoInfo.getNombre().isEmpty()) {
 			producto.setNombre(productoInfo.getNombre());
 		}
 		
 		if(productoInfo.getPrecio() != 0) {
 			producto.setPrecio(productoInfo.getPrecio());
+		}
+		
+		if(productoInfo.getStock() != 0) {
+			producto.setStock(productoInfo.getStock());
 		}
 		return productoRepository.save(producto);
 	}
